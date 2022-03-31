@@ -12,7 +12,7 @@ if((module as any).hot){
     })
 }
 
-ReactDom.render(<App />, document.getElementById('app'))
+ReactDom.render(<App />, document.getElementById('app'));
 
 
 
