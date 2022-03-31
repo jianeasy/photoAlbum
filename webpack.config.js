@@ -16,7 +16,7 @@ module.exports = {
     },
     devServer: {
         hot: true,
-        port: 3001,
+        port: 3333,
         open: true,
         // liveReload: false,
         // watch: true,
