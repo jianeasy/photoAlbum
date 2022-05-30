@@ -1,0 +1,46 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    .options{
+        width: 300px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        color: azure;
+        text-align: center;
+        .add{
+            height: 30px;
+            width: 70px;
+            line-height: 30px;
+            border-radius: 12px;
+            background-color: aquamarine;
+            cursor: pointer;
+            color: #333;
+        }
+        .minus{
+            height: 30px;
+            width: 70px;
+            line-height: 30px;
+            border-radius: 12px;
+            background-color: red;
+            cursor: pointer;
+        }
+    }
+    .list{
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: 10px;
+        text-align: center;
+        .item{
+            margin: 10px 10px;
+            background-color: #87c;
+            border-radius: 12px;
+            color: azure;
+        }
+       
+    }
+
+}

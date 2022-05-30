@@ -6,7 +6,7 @@ module.exports = {
     mode: 'development',
     target: 'web',
     resolve: {
-        extensions: ['.js', '.ts', '.tsx','.scss'],
+        extensions: ['.js', '.ts', '.tsx', '.scss'],
     },
     devtool: 'inline-source-map',
     entry: path.resolve(__dirname, './main.tsx'),  //工程资源入口
@@ -51,7 +51,7 @@ module.exports = {
                 test: /\.scss?$/,
                 use: [
                     'style-loader',
-                'css-loader',
+                    'css-loader',
                     'sass-loader',
                 ]
             }
