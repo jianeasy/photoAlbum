@@ -1,7 +1,7 @@
-import axios from "axios";
+import axios, { AxiosRequestConfig } from "axios";
 import { useEffect, useState } from "react";
 
-const useAxios = (config) => {
+const useAxios = (config: AxiosRequestConfig<any>) => {
     const [loading, setLoading] = useState(false)
     const [err, setErr] = useState(null)
     const [res, setRes] = useState(null)
@@ -10,10 +10,10 @@ const useAxios = (config) => {
         axios(config)
             .then(setRes)
             .catch(setErr)
-            .finally(()=>{
+            .finally(() => {
                 setLoading(false)
             })
-    })
-    return {loading, err, res}
+    }, [])
+    return { loading, err, res }
 }
 export default useAxios
