@@ -1,7 +1,7 @@
-import React, { FC, useEffect, useState, useRef } from "react";
+import React, { FC, useEffect, useState, useRef, Fragment } from "react";
 import styles from "./index.module.scss";
 import useAxios from "../../hooks/useAxios";
-import useIsView from '../../hooks/useIsView';
+import useIsView from "../../hooks/useIsView";
 import _ from "loadsh";
 
 type ImageProps = {
@@ -10,21 +10,34 @@ type ImageProps = {
 };
 const Image: FC<ImageProps> = (props) => {
   const { url, scrollTop } = props;
+  const imgRef = useRef<HTMLImageElement>(null);
+
   const [isView, setIsView] = useState(false);
-    const {isView} = useIsView()
+
   useEffect(() => {
-    // if (scrollTop > imgRef.current.offsetTop) {
-    //   imgRef.current.setAttribute("src", url);
-    // }
-    if (
-      scrollTop + document.body.clientHeight + 20 >
-      imgRef.current.offsetTop
-    ) {
+    if(!imgRef.current) return 
+    if(scrollTop + 400 > imgRef.current.offsetTop ) {
+      console.log(imgRef.current.offsetTop)
       setIsView(true);
     }
   }, [scrollTop]);
-  const imgRef = useRef<HTMLImageElement>(null);
-  return <img ref={imgRef} src={isView ? url : "#"} />;
+  useEffect(() => {
+    if (isView) {
+      console.log("可显示");
+    }
+  }, [isView]);
+
+  return (
+  
+      <div ref={imgRef}>
+      {isView ? (
+        <img  src={isView ? url : "#"} />
+      ) : (
+        <div className={styles.loading}>loading</div>
+      )}
+      </div>
+    
+  );
 };
 
 const UserList: FC = () => {
