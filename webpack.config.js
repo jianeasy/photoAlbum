@@ -37,6 +37,9 @@ module.exports = {
                         // options:{
                         //     transpileOnly: true  
                         // }
+                    },
+                    {
+                        loader: 'babel-loader'
                     }
                 ],
             },

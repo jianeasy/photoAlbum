@@ -66,13 +66,16 @@ const UserList: FC = () => {
       className={styles.page}
       onScroll={_.throttle(handleScroll, 300)}
     >
+
       {list &&
         list.map((item) => {
           //   return <img src={item} key={item} />;
           return <Image url={item} scrollTop={scrollTop} key={item} />;
+
         })}
     </div>
   );
+  
 };
 
 export default UserList;

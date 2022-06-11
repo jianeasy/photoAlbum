@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useEffect, useMemo, useState, useContext } from "react";
 import useAxios from "../../hooks/useAxios";
-import ThemeContext from '../../index';
+import ThemeContext from '../../pages/home/index';
 
 const UserList: FC = () => {
   console.log("render");
