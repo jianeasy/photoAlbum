@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
   const list = [
-    { name: "file", path: "file" },
-    { name: "setting", path: "setting" },
+    { name: "ImageList", path: "file" },
+    { name: "file", path: "setting" },
   ];
   return (
     <div className={styles.container}>
