@@ -10,6 +10,7 @@ if((module as any).hot){
             console.log('hot update success')
         }
     })
+    
 }
 ReactDom.render(<App />, document.getElementById('app'));
 

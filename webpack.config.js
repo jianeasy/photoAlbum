@@ -1,12 +1,22 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { relative } = require('path')
 const path = require('path')
 const webpack = require('webpack')
+
+const resolvePath = (relativePath)=>{ 
+    
+    return path.resolve(process.cwd(), relativePath)
+}
 
 module.exports = {
     mode: 'development',
     target: 'web',
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.scss'],
+        alias:{
+            '@': path.resolve(process.cwd(), '/src'),
+            '@components':resolvePath('/src/components')
+        }
     },
     devtool: 'inline-source-map',
     entry: path.resolve(__dirname, './main.tsx'),  //工程资源入口
@@ -14,6 +24,13 @@ module.exports = {
         filename: 'main.js', // 打包过后的文件名
         path: path.join(__dirname, './dist') //打包后的目录
     },
+    
+    // alias:{
+    //     '@': resolvePath('src'),
+    //     '@components': resolvePath('src/components'),
+    //     '@*': resolvePath('src/*')
+    // },
+    
     devServer: {
         hot: true,
         port: 3333,

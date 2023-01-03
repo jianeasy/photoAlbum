@@ -1,6 +1,5 @@
 import { USER } from '../types';
 
-
 export const CHANGE_IMAGELIST = 'CHANGE_IMAGELIST'
 export const ADD_USER = 'ADD_USER'
 
@@ -11,6 +10,7 @@ export const changeImageList = (imageList: string[]) =>{
         imageList,
     }
 }
+
 
 
 export const addUser = (user: USER) =>{

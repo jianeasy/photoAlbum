@@ -6,8 +6,8 @@ import Animated from "../../components/styleDemo/Animated";
 import Flip from "../../components/flipAnimated";
 import Count from "../../components/Count";
 import UserList from "../../components/userList";
-import ImageList from "../../components/imageList";
-import Nav from "../../components/nav";
+import ImageList from "@components/imageList";
+import Nav from "@components/nav";
 import routes from '../../config/nav';
 
 export const ThemeContext = createContext("light");
