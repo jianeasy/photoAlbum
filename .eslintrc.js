@@ -1,7 +1,15 @@
 module.exports = {
     setting:{
         "import/resolver": {
-            alias:true
-        }
+            alias:{
+                map:[[
+                    '@','./src'
+                            ], [
+                                '@components', './src/components'
+                            ]],
+                extensions:[ '.jsx', '.tsx', '.ts', '.js', '.scss']
+            }
+        },
+       
     }
 }

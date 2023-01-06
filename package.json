@@ -7,6 +7,7 @@
     "@types/react-dom": "^17.0.14",
     "antd": "^5.1.1",
     "axios": "^0.27.2",
+    "eslint-plugin-import": "^2.26.0",
     "loadsh": "^0.0.4",
     "lottie-react-web": "^2.2.2",
     "path-browserify": "^1.0.1",
@@ -30,6 +31,7 @@
     "@reduxjs/toolkit": "^1.8.2",
     "babel-loader": "^8.2.3",
     "css-loader": "^6.7.1",
+    "eslint-import-resolver-alias": "^1.1.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.0",
     "node-sass": "^7.0.1",
@@ -41,13 +43,11 @@
     "ts-loader": "^9.2.8",
     "typescript": "^4.6.2",
     "webpack-cli": "4.9.2",
-    "webpack-dev-server": "4.0.0",
-    "eslint-import-resolver-alias": "^1.1.2"
+    "webpack-dev-server": "4.0.0"
   },
   "scripts": {
     "start": "webpack --config webpack.config.js --mode development",
     "dev": "webpack serve --mode development --env development",
     "build": "webpack --config webpack.config.js --mode production"
   }
-
 }

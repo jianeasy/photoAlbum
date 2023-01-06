@@ -2,12 +2,12 @@ import React, { createContext, ReactNode } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import styles from "./index.module.scss";
-import Animated from "../../components/styleDemo/Animated";
-import Flip from "../../components/flipAnimated";
-import Count from "../../components/Count";
-import UserList from "../../components/userList";
+import Animated from "@components/styleDemo/Animated";
+import Flip from "@components/flipAnimated";
+import Count from "@components/Count";
+import UserList from "@components/userList";
 import ImageList from "@components/imageList";
-import Nav from "@components/nav";
+import Nav from "@components/nav"; 
 import routes from '../../config/nav';
 
 export const ThemeContext = createContext("light");
@@ -19,7 +19,7 @@ export default function App() {
     if (!route) return null;
 
     let res = [];
-    route.forEach((item) => {
+    route.forEach((item: { path: any; component: any; chilren: any; }) => {
       console.log(item);
 
       const { path, component, chilren } = item;
@@ -37,7 +37,7 @@ export default function App() {
 
     return res;
   };
-  const RouteList = (route) => {
+  const RouteList = (route: ({ path: string; component: JSX.Element; chilren?: undefined; } | { path: string; component: JSX.Element; chilren: { path: string; component: JSX.Element; }[]; })[]) => {
     return <Routes>{render(route)}</Routes>;
   };
   return (
@@ -45,7 +45,7 @@ export default function App() {
       <div className={styles.app}>
         {/* <ThemeContext.Provider value="dark">
         <UserList />
-      </ThemeContext.Provider> */}
+        /ThemeContext.Provider> */}
         <Nav></Nav>
         {/* <ImageList></ImageList> */}
         {RouteList(routes)}
