@@ -14,6 +14,7 @@ module.exports = {
         extensions: ['.js', '.ts', '.tsx', '.scss'],
         alias: {
             '@': resolvePath('./src'),
+            "@pages": resolvePath('./src/pages'),
             '@components': resolvePath('./src/components'),
             "@types": resolvePath('./src/types'),
             "@request": resolvePath('./src/request'),
@@ -29,12 +30,6 @@ module.exports = {
         filename: 'main.js', // 打包过后的文件名
         path: path.join(__dirname, './dist') //打包后的目录
     },
-
-    // alias:{
-    //     '@': resolvePath('src'),
-    //     '@components': resolvePath('src/components'),
-    //     '@*': resolvePath('src/*')
-    // },
 
     devServer: {
         hot: true,
