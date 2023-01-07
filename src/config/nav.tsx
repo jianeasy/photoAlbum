@@ -1,14 +1,14 @@
 import React from "react";
 
-
+import { route } from "@types";
 import ImageList from "../components/imageList";
-import Login from '../pages/login';
-const routes = [
+import Login from "../pages/login";
+const routes: route[] = [
   {
     path: "/",
     component: <div>root</div>,
   },
-  { path: '/login', components:<Login></Login>},
+  { path: "/login", component: <Login></Login> },
   {
     path: "/ImageList",
     component: <ImageList />,
@@ -16,7 +16,7 @@ const routes = [
   {
     path: "/file",
     component: <div>file</div>,
-    chilren: [
+    children: [
       {
         path: "/file/detail",
         component: <div>file-detail</div>,
