@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import App from '@/pages/home/index';
+import App from './src/pages/home';
 
 if((module as any).hot){
     (module as any).hot.accept(error=>{

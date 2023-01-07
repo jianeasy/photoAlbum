@@ -1,4 +1,4 @@
-import React, { createContext, ReactNode } from "react";
+import React, { createContext, ReactNode, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { route } from "@types";
 import styles from "./index.module.scss";
@@ -11,29 +11,34 @@ import Nav from "@components/nav";
 import routes from "@config/nav";
 
 export const ThemeContext = createContext("light");
-export default function App() {
-  const render = (route: any) => {
-    console.log("route=>", route);
 
-    if (!route) return null;
+function App() {
+  const [initData, setInitData] = useState({});
+  const setup = async () => {
+    const initData = {};
+    return initData;
+  };
+  useEffect(() => {
+    setup().then((data) => {
+      setInitData(data);
+    });
+  }, []);
 
+  const render = (routes: route[]) => {
+    if (!routes || !routes.length) return null;
     let res = [];
-    route.forEach((item: { path: any; component: any; chilren: any }) => {
-      console.log(item);
-
-      const { path, component, chilren } = item;
+    routes.forEach((item: route) => {
+      const { path, component, children } = item;
       let el = (
         <Route
           path={path}
           element={component}
           key={path}
-          children={render(chilren)}
+          children={render(children)}
         />
       );
       res.push(el);
     });
-    console.log("res=>", res);
-
     return res;
   };
   const RouteList = (route: route[]) => {
@@ -41,14 +46,10 @@ export default function App() {
   };
   return (
     <BrowserRouter>
-      <div className={styles.app}>
-        {/* <ThemeContext.Provider value="dark">
-        <UserList />
-        /ThemeContext.Provider> */}
-        {/* <Nav></Nav> */}
-        {/* <ImageList></ImageList> */}
-        {RouteList(routes)}
-      </div>
+      <div className={styles.app}>{RouteList(routes)}</div>
     </BrowserRouter>
   );
 }
+
+
+export default App;
