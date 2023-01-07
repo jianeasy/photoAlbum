@@ -1,9 +1,9 @@
 import React from 'react'
 import { Form, Input, Button } from 'antd'
 import styles from './index.module.scss';
-import strings from '@/strings'
-import { login } from '@/request';
-import { loginFromData } from '@/types';
+import strings from '@strings'
+import { login } from '@request';
+import { loginFromData } from '@types';
 
 
 export default () => {

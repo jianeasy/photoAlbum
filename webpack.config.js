@@ -3,8 +3,7 @@ const { relative } = require('path')
 const path = require('path')
 const webpack = require('webpack')
 
-const resolvePath = (relativePath)=>{ 
-    
+const resolvePath = (relativePath) => {
     return path.resolve(process.cwd(), relativePath)
 }
 
@@ -13,9 +12,15 @@ module.exports = {
     target: 'web',
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.scss'],
-        alias:{
-            '@': path.resolve(process.cwd(), '/src'),
-            '@components':resolvePath('/src/components')
+        alias: {
+            '@': resolvePath('./src'),
+            '@components': resolvePath('./src/components'),
+            "@types": resolvePath('./src/types'),
+            "@request": resolvePath('./src/request'),
+            "@strings": resolvePath('./src/strings'),
+            "@redux": resolvePath('./src/redux'),
+            "@utils": resolvePath('./src/utils'),
+            "@config": resolvePath('./src/config')
         }
     },
     devtool: 'inline-source-map',
@@ -24,13 +29,13 @@ module.exports = {
         filename: 'main.js', // 打包过后的文件名
         path: path.join(__dirname, './dist') //打包后的目录
     },
-    
+
     // alias:{
     //     '@': resolvePath('src'),
     //     '@components': resolvePath('src/components'),
     //     '@*': resolvePath('src/*')
     // },
-    
+
     devServer: {
         hot: true,
         port: 3333,

@@ -2,13 +2,13 @@ import React, { createContext, ReactNode } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import styles from "./index.module.scss";
-import Animated from "@components/styleDemo/Animated";
+import {Animated} from "@components";
 import Flip from "@components/flipAnimated";
 import Count from "@components/Count";
 import UserList from "@components/userList";
 import ImageList from "@components/imageList";
 import Nav from "@components/nav"; 
-import routes from '../../config/nav';
+import routes from '@config/nav';
 
 export const ThemeContext = createContext("light");
 export default function App() {

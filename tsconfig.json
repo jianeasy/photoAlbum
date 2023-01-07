@@ -1,11 +1,24 @@
 {
-    "compilerOptions": {
-        "jsx": "react-jsx",
-        "allowSyntheticDefaultImports": true,
-        "baseUrl": ".",
-        "paths": {
-            "@": ["./src"],
-            "@components":["./components"]
-        }
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "allowSyntheticDefaultImports": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@": ["./src"],
+      "@components": ["./components"],
+      "@components/*": ["./components/*"],
+      "@types": ["./types"],
+      "@types/*": ["./types/*"],
+      "@request": ["./request"],
+      "@request/*": ["./request/*"],
+      "@utils": ["./utils"],
+      "@utils/*": ["./utils/*"],
+      "@redux": ["./redux"],
+      "@redux/*": ["./redux/*"],
+      "@strings": ["./strings"],
+      "@strings/*": ["./strings/*"],
+      "@config": ["./config"],
+      "@config/*": ["./config/*"]
     }
+  }
 }
