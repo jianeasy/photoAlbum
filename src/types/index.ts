@@ -16,5 +16,8 @@ export interface userInfo {
 export interface route {
     path: string;
     component: FC | null | JSX.Element,
-    children?: route[] | undefined
+    children?: route[] | undefined,
+    options?: {
+        
+    }
 }
