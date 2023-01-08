@@ -22,7 +22,6 @@ export default () => {
             </Form.Item>
             <Form.Item>
                 <div>
-
                 <Button onClick={()=>{
                     form.submit()
                 }}>{strings.login}</Button>

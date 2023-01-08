@@ -1,5 +1,6 @@
 import React, { createContext, ReactNode, useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Provider } from 'react-redux'
 import { route } from "@types";
 import styles from "./index.module.scss";
 import { Animated } from "@components";
@@ -9,7 +10,7 @@ import UserList from "@components/userList";
 import ImageList from "@components/imageList";
 import Nav from "@components/nav";
 import routes from "@config/nav";
-
+import {store} from '@redux/store'
 export const ThemeContext = createContext("light");
 
 function App() {
@@ -45,9 +46,11 @@ function App() {
     return <Routes>{render(route)}</Routes>;
   };
   return (
+    <Provider store={store}>
     <BrowserRouter>
       <div className={styles.app}>{RouteList(routes)}</div>
     </BrowserRouter>
+    </Provider>
   );
 }
 
