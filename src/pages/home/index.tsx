@@ -1,5 +1,5 @@
 import React, { createContext, ReactNode, useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
 import { Provider } from 'react-redux'
 import { route } from "@types";
 import styles from "./index.module.scss";
@@ -14,7 +14,18 @@ import {store} from '@redux/store'
 export const ThemeContext = createContext("light");
 
 function App() {
+  const routePush = useNavigate()
+
+
   const [initData, setInitData] = useState({});
+
+  useEffect(()=>{
+    const token = window.localStorage.getItem('token')
+    if(!token){
+      routePush('/login')
+      return 
+    }
+  }, [])
   const setup = async () => {
     const initData = {};
     return initData;
@@ -47,9 +58,9 @@ function App() {
   };
   return (
     <Provider store={store}>
-    <BrowserRouter>
+    
       <div className={styles.app}>{RouteList(routes)}</div>
-    </BrowserRouter>
+   
     </Provider>
   );
 }

@@ -1,5 +1,6 @@
 import { CHANGE_IMAGELIST, ADD_USER } from '../actions';
 
+import {ReduxAction}from '@types'
 
 const defaultState = {
     imageList: [],
@@ -7,19 +8,20 @@ const defaultState = {
 }
 
 
-export const reducer = (state = defaultState, action) => {
-    switch (action.type) {
+export const reducer = (state = defaultState, action: ReduxAction) => {
+    const {type, payload} = action
+    switch (type) {
         case CHANGE_IMAGELIST:
             return {
                 ...state,
-                imageList: action.imageList,
+                imageList: payload
             }
         case ADD_USER:
             return {
                 ...state,
                 useList: [
                     ...state.userList,
-                    action.user,
+                    payload
                 ]
             }
         default:

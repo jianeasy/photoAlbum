@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
+import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+
 import App from './src/pages/home';
 
 if((module as any).hot){
@@ -12,7 +14,8 @@ if((module as any).hot){
     })
     
 }
-ReactDom.render(<App />, document.getElementById('app'));
+ReactDom.render(   <BrowserRouter>
+<App /></BrowserRouter>, document.getElementById('app'));
 
 
 
