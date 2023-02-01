@@ -37,9 +37,19 @@ module.exports = {
         open: true,
         // liveReload: false,
         // watch: true,
+
         static: {
-            directory: path.join(__dirname, 'dist')
+            directory: path.join(__dirname, 'public')
         },
+        // devMiddleware: {
+        //     index: false, // specify to enable root proxying
+        // },
+        proxy: {
+            '/dev': {
+                target: 'http://101.43.68.207:3003',
+                pathRewrite: { '^/dev': '/api' },
+            }
+        }
         // inline: true,
     },
     module: {

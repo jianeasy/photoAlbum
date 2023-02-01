@@ -1,6 +1,15 @@
 import { ReactNode, ReactComponentElement, FC } from 'react'
 
 
+export interface ResponseType {
+    code: number;
+    data: any;
+    token?: string | number;
+    message?: string | number;
+    success: boolean
+
+}
+
 export interface ReduxAction {
     type: string;
     payload: unknown
@@ -24,6 +33,6 @@ export interface route {
     component: FC | null | JSX.Element,
     children?: route[] | undefined,
     options?: {
-        
+
     }
 }

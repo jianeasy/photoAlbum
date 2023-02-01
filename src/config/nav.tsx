@@ -3,6 +3,7 @@ import React from "react";
 import { route } from "@types";
 import ImageList from "../components/imageList";
 import Login from "../pages/login";
+
 const routes: route[] = [
   {
     path: "/",
