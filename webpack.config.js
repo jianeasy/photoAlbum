@@ -49,6 +49,7 @@ module.exports = {
                 target: 'http://101.43.68.207:3003',
                 pathRewrite: { '^/dev': '/api' },
             }
+           
         }
         // inline: true,
     },

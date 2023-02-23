@@ -1,0 +1,9 @@
+.container{
+    padding: 100px;
+    width: 700px;
+    .submit_row{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+    flex-direction: row;  }
+}
