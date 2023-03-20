@@ -67,10 +67,9 @@ function App() {
   return (
     <Provider store={store}>
       <Header></Header>
+      {RouteList(routes)}
       {/* <div className={styles.content}>{RouteList(routes)}</div> */}
-      <Routes>
-        <Route path="/upload" element={<Upload></Upload>}></Route>
-      </Routes>
+      {/* <Route path="/upload" element={<Upload></Upload>}></Route> */}
     </Provider>
   );
 }

@@ -35,21 +35,21 @@ module.exports = {
         hot: true,
         port: 3333,
         open: true,
-        // liveReload: false,
-        // watch: true,
-
         static: {
             directory: path.join(__dirname, 'public')
         },
-        // devMiddleware: {
-        //     index: false, // specify to enable root proxying
-        // },
+
         proxy: {
             '/dev': {
-                target: 'http://101.43.68.207:3003',
+                // target: 'http://101.43.68.207:3003',
+                target: 'http:// 172.23.5.35:3003/',
                 pathRewrite: { '^/dev': '/api' },
+            },
+            '/*': {
+                target: 'http://172.26.11.65:3003/',
+                //pathRewrite: { '^/dev': '/api' },
             }
-           
+
         }
         // inline: true,
     },
@@ -96,5 +96,4 @@ module.exports = {
         }),
         new webpack.HotModuleReplacementPlugin()
     ]
-
 }

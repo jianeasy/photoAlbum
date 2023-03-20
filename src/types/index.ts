@@ -21,6 +21,16 @@ export interface loginFromData {
 }
 
 
+export interface Photo {
+    photoName: string
+    photoUrl: string
+    address: string
+    size: string
+    time: string
+    remark: string
+    tag: string
+}
+
 export interface userInfo {
     userName: string;
     type: string;

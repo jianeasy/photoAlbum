@@ -15,12 +15,12 @@ const Header = () => {
       </div>
       <div
         onClick={() => {
-          navigate("/upload");
+          navigate("/photo");
         }}
       >
-        上传一张照片
-        
+        列表
       </div>
+
     </div>
   );
 };
